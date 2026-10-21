@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Little Corner – Hobbies, Food & Dream Trips</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="logo" href="#top">My Little <span>Corner</span></a>
+    <nav>
+      <a href="#posts">Posts</a>
+      <a href="#about">About</a>
+      <button id="theme" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="emojis">🎮 🥾 🏐 🎬 🍝</div>
+  <h1>Welcome to <em>my little corner</em> of the internet</h1>
+  <p>A blog about the things I love to do, the food I can’t stop eating, and the places I dream of going.</p>
+</section>
+
+<main id="posts">
+  <div class="controls">
+    <div class="filters" id="filters">
+      <button class="active" data-f="all">All</button>
+      <button data-f="Hobbies">🎯 Hobbies</button>
+      <button data-f="Foods">🍴 Foods</button>
+      <button data-f="Places">✈️ Places</button>
+    </div>
+    <input id="search" type="search" placeholder="Search posts…" aria-label="Search posts">
+  </div>
+  <div class="grid" id="grid"></div>
+  <p class="empty hidden" id="empty">No posts found. Try another search!</p>
+
+  <h2 class="sec" id="about">About me</h2>
+  <p>Hi! I’m a Filipino who loves games, the outdoors, sports and, most of all, good food. I started this blog to share what makes me happy and to keep a list of the places I hope to visit someday. Thanks for stopping by! 💛</p>
+</main>
+
+<footer>Made with ❤️ · <span id="year"></span> · My Little Corner</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

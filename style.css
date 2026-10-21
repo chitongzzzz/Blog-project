@@ -1,0 +1,56 @@
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#fff8f0; --surface:#ffffff; --text:#2b2233; --muted:#6d6377;
+  --accent:#ff6b4a; --accent2:#7a5cff; --border:#eadfd2; --shadow:0 6px 20px rgba(60,30,90,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16121e; --surface:#211b2d; --text:#f3eefa; --muted:#a99fb8;
+    --accent:#ff8266; --accent2:#a590ff; --border:#34293f; --shadow:0 6px 20px rgba(0,0,0,.4);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16121e; --surface:#211b2d; --text:#f3eefa; --muted:#a99fb8;
+  --accent:#ff8266; --accent2:#a590ff; --border:#34293f; --shadow:0 6px 20px rgba(0,0,0,.4);
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--border)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.bar{max-width:1000px;margin:auto;padding:.7rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-weight:800;font-size:1.15rem;text-decoration:none;color:var(--text)}
+.logo span{color:var(--accent)}
+nav{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--accent)}
+#theme{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:.3rem .7rem;cursor:pointer;font-size:1rem}
+.hero{max-width:1000px;margin:auto;padding:3.5rem 1.2rem 2rem;text-align:center}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);margin:.2rem 0;line-height:1.15}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:600px;margin:1rem auto;color:var(--muted);font-size:1.1rem}
+.emojis{font-size:2rem;letter-spacing:.4rem}
+main{max-width:1000px;margin:auto;padding:0 1.2rem 3rem}
+.controls{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;margin:1.5rem 0}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap}
+.filters button{border:1px solid var(--border);background:var(--surface);color:var(--text);padding:.45rem 1rem;border-radius:999px;cursor:pointer;font-weight:600;font-size:.95rem}
+.filters button.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
+#search{border:1px solid var(--border);background:var(--surface);color:var(--text);padding:.5rem 1rem;border-radius:999px;font-size:.95rem;min-width:200px}
+h2.sec{margin:2.2rem 0 .2rem;font-size:1.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.1rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1.2rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.5rem;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card .icon{font-size:2.2rem}
+.tag{align-self:flex-start;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.15rem .6rem;border-radius:999px;background:color-mix(in srgb,var(--accent2) 18%,transparent);color:var(--accent2)}
+.card h3{margin:0;font-size:1.15rem}
+.card p{margin:0;color:var(--muted);font-size:.97rem}
+.more{display:none;border-top:1px dashed var(--border);padding-top:.6rem}
+.card.open .more{display:block}
+.card button.read{margin-top:auto;align-self:flex-start;border:0;background:none;color:var(--accent);font-weight:700;cursor:pointer;padding:0;font-size:.95rem}
+.empty{text-align:center;color:var(--muted);padding:2rem}
+footer{text-align:center;color:var(--muted);padding:2rem 1rem;border-top:1px solid var(--border);font-size:.9rem}
+.hidden{display:none}
